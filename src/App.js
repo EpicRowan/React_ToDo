@@ -1,11 +1,15 @@
 
 import React from "react"
 import ToDoItem from "./components/ToDoItem"
-
+import './index.css';
 
 function App() {
   return(
-    <ToDoItem />
+    <div>
+      <ToDoItem />
+      <ToDoItem />
+      <ToDoItem />
+    </div>
   )
 }
 
