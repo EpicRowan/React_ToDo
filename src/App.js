@@ -1,10 +1,11 @@
 
 import React from "react"
+import ToDoItem from "./components/ToDoItem"
 
 
 function App() {
   return(
-    <ToDo />
+    <ToDoItem />
   )
 }
 
