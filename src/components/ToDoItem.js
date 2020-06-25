@@ -4,7 +4,7 @@ function ToDoItem() {
 	return (
 		<div className="todo">
 			<input type="checkbox" />
-			<p> Placeholder text </p>
+			<p> Placeholder text! </p>
 		</div>
 		)
 }

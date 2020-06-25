@@ -3,8 +3,6 @@
   padding: 0;
   font-family: sans-serif;
   font-size: 50;
-  background-color: grey;
-}
-.body {
-	color: red;
+  font-weight: bold;
+  background-color: teal;
 }
