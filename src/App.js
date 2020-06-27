@@ -1,21 +1,23 @@
 
 import React from "react"
-// import ToDoItem from "./components/ToDoItem"
+import ToDoItem from "./components/ToDoItem"
 import ContactCard from "./components/ContactCard"
 import './index.css';
+import todosData from ""
 
 // To Do list App
 
 // function App() {
+// 	const todothings= todosData.map(item => <ToDoItem item={item}/>)
 //   return(
 //     <div>
-//       <ToDoItem />
-//       <ToDoItem />
-//       <ToDoItem />
+//       <{todothings} />
+
 //     </div>
 //   )
 // }
 
+// //
 // Contact Card App
 
 // function App() {
@@ -35,16 +37,28 @@ import './index.css';
 //   )
 // }
 
-function App() {
-	const products =
-	productData => (function.map(data))
+import React from "react"
 
+class App extends React.component {
+	constructor() {
+	super()
+	this.state = {
+		isLoggedIn: false
+	}
+}
+render() {
+	let wordDisplay
+	if (this.state.isLoggedIn) {
+		wordDisplay = "in"		
+	} else {
+		wordDisplay = "out"
+	}
 	return (
 		<div>
-		<key = products.id 
+			<h1> You're logged {wordDisplay}</h1>
 		</div>
 
-	)
+		)
 }
 
-export default App
+}
