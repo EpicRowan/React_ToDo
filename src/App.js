@@ -92,7 +92,19 @@ class App extends React.Component {
 	}
 
 	handleChange(id) {
-		
+		this.setState(prevState) => {
+			const updatedTodos = prevState.todos.map(todo =>
+				if (todos === id) {
+					todocompleted != updatedTodos
+				}			
+				return todos
+
+			return {
+				todos: updatedTodos
+			}
+					)
+				}
+		}
 	render() {
 		const todothings= this.state.todos.map(item => <ToDoItem item={item}/>)
 
