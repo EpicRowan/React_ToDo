@@ -1,8 +1,8 @@
 
-import React from "react"
-import ToDoItem from "./components/ToDoItem"
-import './index.css';
-import todosData from "./todosData"
+// import React from "react"
+// import ToDoItem from "./components/ToDoItem"
+// import './index.css';
+// import todosData from "./todosData"
 
 // To Do list App
 
@@ -79,41 +79,107 @@ import todosData from "./todosData"
 // 	}
 // }
 
-// To Do list App with state and event handler
+// Practice re-doing function and component
 
-class App extends React.Component {
+// class App extends React.Component {
+// 	constructor() {
+// 		super()
+// 		this.state ={
+// 			todos: todosData
+// 		}
+// 	this.handleChange=this.handleChange.bind(this)
+
+// 	}
+
+// 	handleChange(id) {
+// 		this.setState(prevState) => {
+// 			const updatedTodos = prevState.todos.map(todo =>
+// 				if (todos === id) {
+// 					todocompleted != updatedTodos
+// 				}			
+// 				return todos
+
+// 			return {
+// 				todos: updatedTodos
+// 			}
+// 					)
+// 				}
+// 		}
+// 	render() {
+// 		const todothings= this.state.todos.map(item => <ToDoItem item={item}/>)
+
+// 		return (
+// 			<div>
+// 				{todothings}
+// 			</div>
+// 			)
+// 	}
+// }
+// export default App
+
+
+// Conditional Rendering practice
+
+// class App extends React.Component {
+// 	constructor () {
+// 	super()
+// 	this.state = {
+// 		isLoggedIn: false
+// 	}
+// 	this.handleClick = this.handleClick.bind(this)
+// }
+
+// handleClick() {
+// 	this.setState(prevState => {
+// 		return {
+// 			isLoggedIn: !prevState.isLoggedIn
+// 		}
+// 	})
+// }
+// 	render() {
+// 		let buttonText = this.state.isLoggedIn ? "Log out" : "Log in"
+// 		let displayText = this.state.isLoggedIn ? "Logged in" : "Logged out"
+// 	return (
+// 		<div>
+// 		<button onClick= {this.handleClick> {buttonText}</button>
+// 		{<h1> {displayText} </h1>
+// 		</div>
+
+// 	)
+// }
+// }
+
+// export default App
+
+// Forms practice
+
+import React, {Component} from "react"
+
+class App extends Component {
 	constructor() {
 		super()
-		this.state ={
-			todos: todosData
+		this.state = {
+			firstName:""
 		}
-	this.handleChange=this.handleChange.bind(this)
-
+		this.handleChange = this.handleChange.bind(this)
 	}
 
-	handleChange(id) {
-		this.setState(prevState) => {
-			const updatedTodos = prevState.todos.map(todo =>
-				if (todos === id) {
-					todocompleted != updatedTodos
-				}			
-				return todos
-
-			return {
-				todos: updatedTodos
-			}
-					)
-				}
+		handleChange(event) {
+			this.setState({
+				firstName: event.target.value
+			})
 		}
-	render() {
-		const todothings= this.state.todos.map(item => <ToDoItem item={item}/>)
 
-		return (
-			<div>
-
-				{todothings}
-			</div>
-			)
+		render() {
+			return (
+				<form>
+					<input type="text" 
+					 placeholder="First Name" 
+					 onChange={this.handleChange}/>
+					 <h1>{this.state.firstName} </h1>
+				</form>
+				)
+		}
 	}
-}
+
 export default App
