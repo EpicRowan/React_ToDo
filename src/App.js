@@ -166,7 +166,7 @@ class App extends Component {
 
 		handleChange(event) {
 			this.setState({
-				firstName: event.target.value
+				[event.target.name]: event.target.value
 			})
 		}
 
@@ -174,9 +174,15 @@ class App extends Component {
 			return (
 				<form>
 					<input type="text" 
+					name="firstName"
 					 placeholder="First Name" 
 					 onChange={this.handleChange}/>
-					 <h1>{this.state.firstName} </h1>
+					 <br />
+					<input type="text" 
+					name="lastName"
+					 placeholder="Last Name" 
+					 onChange={this.handleChange}/>
+					 <h1>{this.state.firstName} {this.state.lastName} </h1>
 				</form>
 				)
 		}
