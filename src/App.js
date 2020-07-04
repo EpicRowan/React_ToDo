@@ -205,14 +205,21 @@ class App extends Component {
 			age:"",
 			gender:"",
 			destination:"",
-			dietaryRestrictions: []
+			isVegan: false,
+			isKosher: false,
+			
 
 		} 
 		this.handleChange = this.handleChange.bind(this)
 	}
 
 	handleChange(event) {
-		const{name, value} = event.target
+		const{name, value, type, checked} = event.target
+		type === "checkbox" ?
+			this.setState({
+					[name]: checked
+			})
+		:
 		this.setState({
 			[name]:value
 		})
@@ -250,6 +257,48 @@ class App extends Component {
 				onChange={this.handleChange}/> 
 				Male </label>
 			<br />
+			<label>
+			<input 
+				type="radio"
+				name="gender"
+				value="female"
+				checked={this.state.gender === "female"}
+				onChange={this.handleChange}/> 
+				Female </label>
+			<br />
+
+			<select 
+				value={this.state.destination}
+				name="destination"
+				onChange= {this.handleChange}
+
+			>
+			<option value="USA">USA</option>
+			<option value="Japan">Japan</option>
+			<option value="Narnia">Narnia</option>
+			</select>
+
+			<br />
+
+			<label>
+			<input
+				type="checkbox"
+				name="isVegan"
+				onChange={this.handleChange}
+				checked={this.state.isVegan} />
+				Vegan?
+				</label>
+				<br />
+
+			<label>
+			<input
+				type="checkbox"
+				name="isKosher"
+				onChange={this.handleChange}
+				checked={this.state.isKosher} />
+				Kosher?
+				</label>
+				<br />
 
 			<button>Submit</button>
 			</form>
@@ -258,7 +307,8 @@ class App extends Component {
 			<p> Your name: {this.state.firstName} {this.state.lastName} </p>
 			<p> Your age: {this.state.age} </p>
 			<p> Your gender: {this.state.gender}</p>
-
+			<p> Your destination: {this.state.destination}</p>
+			<p> Dietary Restricitons: {this.state.isVegan ? "Vegan": null} {this.state.isKosher ? "Kosher": null}</p>
 			</main>
 
 			)
