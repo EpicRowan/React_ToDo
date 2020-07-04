@@ -200,19 +200,65 @@ class App extends Component {
 	constructor() {
 		super()
 		this.state = {
+			firstName:"",
+			lastName:"",
+			age:"",
+			gender:"",
+			destination:"",
+			dietaryRestrictions: []
 
-		}
+		} 
+		this.handleChange = this.handleChange.bind(this)
 	}
+
+	handleChange(event) {
+		const{name, value} = event.target
+		this.setState({
+			[name]:value
+		})
+	}
+
 	render() {
 		return (
 			<main>
 			<form>
-			<input placeholder="First Name"/> <br />
-			<input placeholder="Last Name"/> <br />
-			<input placeholder="Age"/> <br />
-
+			<input 
+				name="firstName"
+				value={this.state.firstName} 
+				onChange={this.handleChange}
+				placeholder="First Name"/> 
 			<br />
+			<input 
+				name="lastName"
+				value={this.state.lastName} 
+				onChange={this.handleChange}
+				placeholder="Last Name"/> 
+			<br />
+			<input 
+				name="age" 
+				value={this.state.age} 
+				onChange={this.handleChange}
+				placeholder="Age"/> 
+			<br />
+
+			<label>
+			<input 
+				type="radio"
+				name="gender"
+				value="male"
+				checked={this.state.gender === "male"}
+				onChange={this.handleChange}/> 
+				Male </label>
+			<br />
+
+			<button>Submit</button>
 			</form>
+			<hr />
+			<h2> Entered Information:</h2>
+			<p> Your name: {this.state.firstName} {this.state.lastName} </p>
+			<p> Your age: {this.state.age} </p>
+			<p> Your gender: {this.state.gender}</p>
+
 			</main>
 
 			)
